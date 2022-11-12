@@ -6,7 +6,7 @@ import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { join } from 'path';
 import { CatModule } from './cat/cat.module';
 import { MongooseModule } from '@nestjs/mongoose';
-import { AdsModule } from './ads/ads.module';
+import { PropertiesModule } from './properties/properties.module';
 
 @Module({
   imports: [
@@ -16,7 +16,7 @@ import { AdsModule } from './ads/ads.module';
     }),
     CatModule,
     MongooseModule.forRoot('mongodb://localhost:27017/kolving'),
-    AdsModule,
+    PropertiesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
