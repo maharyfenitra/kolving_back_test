@@ -9,23 +9,25 @@ type CreateCatDto {
   breed: String!
 }
 
-type Ad {
-  """Example field (placeholder)"""
-  exampleField: Int!
+type Property {
+  id: ID!
+  title: String!
+  adress: String!
+  surface: Int!
+  picture: String!
 }
 
 type Query {
-  Hello: String!
   cats: [CreateCatDto!]!
-  ads: [Ad!]!
-  ad(id: Int!): Ad!
+  findAllPropreties: [Property!]!
+  property(id: String!): Property!
 }
 
 type Mutation {
   createCats(input: CatInput!): CreateCatDto!
-  createAd(createAdInput: CreateAdInput!): Ad!
-  updateAd(updateAdInput: UpdateAdInput!): Ad!
-  removeAd(id: Int!): Ad!
+  createProperty(createPropertyInput: CreatePropertyInput!): Property!
+  updateProperty(updatePropertyInput: UpdatePropertyInput!): Property!
+  removeProperty(id: Int!): Property!
 }
 
 input CatInput {
@@ -34,13 +36,17 @@ input CatInput {
   breed: String!
 }
 
-input CreateAdInput {
-  """Example field (placeholder)"""
-  exampleField: Int!
+input CreatePropertyInput {
+  title: String!
+  adress: String!
+  surface: Int!
+  picture: String!
 }
 
-input UpdateAdInput {
-  """Example field (placeholder)"""
-  exampleField: Int
-  id: Int!
+input UpdatePropertyInput {
+  title: String
+  adress: String
+  surface: Int
+  picture: String
+  id: String!
 }
